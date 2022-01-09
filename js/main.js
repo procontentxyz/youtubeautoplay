@@ -50,7 +50,7 @@ window.onYouTubeIframeAPIReady = function() {
                         var getAutoPlay = $(this).data('autoplay');
                         if($(this).attr('id') === $(that).attr('id') && $(this).attr('id') !== pausedVideo && getAutoPlay == "1"){
                             players[i].playVideo();
-                            players[i].mute();
+                            //players[i].mute();
                         }else{
                             //players[i].stopVideo();
                             players[i].pauseVideo();
@@ -75,7 +75,7 @@ function createPlayer(playerInfo) {
         playerVars = { 'autoplay': 0, 'controls': 0, 'rel': 0, 'showinfo': 0, 'loop': 1, 'modestbranding': 1 };
     */
 
-    playerVars = { 'autoplay': 0, 'controls': 0, 'rel': 0, 'showinfo': 0, 'loop': 1, 'modestbranding': 1 };
+    playerVars = { 'autoplay': 0, 'controls': 1, 'rel': 0, 'showinfo': 0, 'loop': 1, 'modestbranding': 1 };
 
     return new YT.Player(playerInfo.id, {
         height: playerInfo.height,
