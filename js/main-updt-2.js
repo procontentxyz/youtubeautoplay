@@ -34,11 +34,11 @@ window.onYouTubeIframeAPIReady = function() {
                     $('.youtube-video').each(function (i) {
                         var getAutoPlay = $(this).data('autoplay');
                         if($(this).attr('id') === $(that).attr('id') && $(this).attr('id') !== pausedVideo && getAutoPlay == "1"){
+                            players[i].mute();
                             players[i].playVideo();
-                            //players[i].mute();
                         }else{
-                            //players[i].stopVideo();
-                            players[i].pauseVideo();
+                            players[i].stopVideo();
+                            //players[i].pauseVideo();
                         }
                     });
                 }
