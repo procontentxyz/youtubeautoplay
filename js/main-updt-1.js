@@ -3,20 +3,6 @@ var done = false;
 var iterator = 0;
 var pausedVideo = "";
 
-function fnIsAppleMobile()
-{
-    if (navigator && navigator.userAgent && navigator.userAgent != null)
-    {
-        var strUserAgent = navigator.userAgent.toLowerCase();
-        var arrMatches = strUserAgent.match(/(iphone|ipod|ipad|android)/);
-        if (arrMatches != null)
-             return true;
-    } // End if (navigator && navigator.userAgent)
-
-    return false;
-} // End Function fnIsAppleMobile
-
-
 window.onYouTubeIframeAPIReady = function() {
     $('.youtube-video').each(function(){
         var getYtID = $(this).data('video-id');
@@ -41,7 +27,6 @@ window.onYouTubeIframeAPIReady = function() {
 
     });
     if(players.length === $('.youtube-video').length){
-        if(!fnIsAppleMobile()){
             $('.youtube-video').each(function(){
             var that = $(this);
             $(window).scroll(function() {
@@ -59,7 +44,6 @@ window.onYouTubeIframeAPIReady = function() {
                 }
             });
         });
-        }
     }else{
         console.log("videos not loaded");
     }
