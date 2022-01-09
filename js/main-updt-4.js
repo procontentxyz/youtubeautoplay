@@ -8,7 +8,7 @@ window.onYouTubeIframeAPIReady = function() {
         var getYtID = $(this).data('video-id');
         var getHeight = $(this).data('video-height');
         var getAutoPlay = $(this).data('video-autoplay');
-        if(!getHeight || getHeight % 1 !== 0 || getHeight < 360 ){
+        if(!getHeight){
             getHeight =  "360";
         }
 
