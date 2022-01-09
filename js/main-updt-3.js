@@ -8,8 +8,8 @@ window.onYouTubeIframeAPIReady = function() {
         var getYtID = $(this).data('video-id');
         var getHeight = $(this).data('video-height');
         var getAutoPlay = $(this).data('video-autoplay');
-        if(!getHeight || getHeight % 1 !== 0 || getHeight < 200 ){
-            getHeight =  "390";
+        if(!getHeight || getHeight % 1 !== 0 || getHeight < 360 ){
+            getHeight =  "360";
         }
 
         iterator++;
@@ -33,7 +33,7 @@ window.onYouTubeIframeAPIReady = function() {
                 if(isElementInViewport(that)){
                     $('.youtube-video').each(function (i) {
                         var getAutoPlay = $(this).data('autoplay');
-                        if($(this).attr('id') === $(that).attr('id') && $(this).attr('id') !== pausedVideo && getAutoPlay == "1"){
+                        if($(this).attr('id') === $(that).attr('id') && $(this).attr('id') !== stopVideo && getAutoPlay == "1"){
                             players[i].mute();
                             players[i].playVideo();
                         }else{
